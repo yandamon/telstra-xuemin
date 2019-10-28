@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
+import {setListItems} from './actions/listActions';
+import sourceData from './data/sourceData';
+import ListItems from './components/ListItems';
+import ListCart from './components/ListCart';
+import Header from './components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  componentDidMount(){
+    const data = sourceData.filter(item => item.isPublished === "true")
+    this.props.setListItems(data)
+  
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Header />
+        <div className = "box-layout">
+          <ListItems />
+          <ListCart />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch,props) => ({
+  setListItems: (items) => dispatch(setListItems(items))
+})
+
+export default connect(null,mapDispatchToProps)(App);

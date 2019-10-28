@@ -1,0 +1,23 @@
+.header {
+    margin-top: -0.5rem;
+    height: 5rem;
+    background: $off-white;
+    box-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, .5);
+  }
+  
+  .header__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size 0;
+  }
+  
+  .header__content {
+    color: white;
+    text-decoration: none;
+    h1 {
+      margin: 0 5rem;
+      color:#0064d2;
+    }
+  }
+  
