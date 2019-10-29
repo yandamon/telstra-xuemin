@@ -1,26 +1,29 @@
 .box-layout{
     display: flex;
+}
 
-    .item-main{
-        margin: 5rem;
-        background: fade-out(white, .15);
-        border-radius: 3px;
-        padding: $l-size $m-size;
-        text-align: center;
-        width: 100rem;
-    }
-    .item-card{
-        display: inline-block;
-    }
+.item-main{
+    margin-top: 5rem;
+    background: fade-out(white, .15);
+    border-radius: 3px;
+    padding: $l-size $m-size;
+    text-align: center;
+    width: 100rem;
+    display: flex;
+}
+.item-card{
+    display: inline-block;
+}
 
-    .cart-main{
-        margin: 5rem;
-        width: 40rem;
-    }
+.cart-main{
+    margin-top: 5rem;
+    width: 40rem;
+    text-align: right;
+}
 
-    .cart-card{
-        width: 40rem;
-        height: 5rem;
-        position: relative;
-    }
+.cart-card{
+    width: 40rem;
+    height: 5rem;
+    position: relative;
+    display: inline-block;
 }

@@ -8,6 +8,6 @@ export default (props) =>{
     return(<div className="cart-card">
         <div className="cart-card_name">{productName}</div>
         <div className="cart-card_price">{numeral(price).format('$0,0.00')}</div>
-        <button onClick = {() => props.onClick(props.cartItem)} className="cart-card_button">Remove</button>
+        <button onClick = {() => props.onRemoveFromCartClick(props.cartItem)} className="cart-card_button">Remove</button>
     </div>
 )}

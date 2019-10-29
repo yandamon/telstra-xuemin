@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <div className = "box-layout">
+        <div className = "box-layout row">
           <ListItems />
           <ListCart />
         </div>

@@ -8,7 +8,7 @@ import numeral from 'numeral'
 
  class ListCart extends React.Component{ 
 
-    onClick = (item) => {
+    onRemoveFromCartClick = (item) => {
         this.props.removeCartItem(item);
         this.props.addListItem(item);
     }
@@ -16,17 +16,17 @@ import numeral from 'numeral'
 
     render(){
         return(
-            <div className="cart-main">
+            <div className="cart-main .col-lg-3 .col-3 .col-md-3 .col-sm-12">
                 {
                     this.props.carts.length === 0 ? (
-                        <div className="no-item_cart">There is no item, try to add one mobile to the shopping cart</div>
+                        <div className="cart-item"><p className="no-item_cart">There is no item, try to add one mobile to the shopping cart</p></div>
                     ) :(
                         this.props.carts.map( cartItem => {
-                            return <ListCartDetail key = {cartItem.productName} cartItem={cartItem} onClick = {this.onClick} />;
+                            return <ListCartDetail key = {cartItem.productName} cartItem={cartItem} onRemoveFromCartClick = {this.onRemoveFromCartClick} />;
                         })
                     )
                 }
-                <div className="cart-total">Total Pirce: {numeral(totalPrice(this.props.carts)).format('$0,0.00')}</div>
+                <div className="cart-total"><p className="cart-total_price">Total Pirce: {numeral(totalPrice(this.props.carts)).format('$0,0.00')}</p></div>
             </div>
         );
     }
